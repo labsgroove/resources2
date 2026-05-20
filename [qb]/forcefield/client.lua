@@ -3,10 +3,10 @@ local active = false
 local hitCooldown = {}
 
 -- CONFIG
-local RADIUS = 6.0
-local FORCE = 30.0        -- intensidade do impacto
-local UP_FORCE = 15.0     -- vertical (batida, não balão)
-local COOLDOWN_MS = 800
+local RADIUS = 6.3
+local FORCE = 25.0        -- intensidade do impacto
+local UP_FORCE = 13.0     -- vertical (batida, não balão)
+local COOLDOWN_MS = 500
 
 RegisterCommand("forcefield", function()
     active = not active
