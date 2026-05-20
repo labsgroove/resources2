@@ -131,8 +131,8 @@ RegisterNetEvent('QBCore:Client:EnteredVehicle', function()
                                 end
                             end
                         elseif (seatbeltOn or harnessOn) and not IsThisModelABike(currVehicle) then
-                            if lastFrameVehSpeed > 150 then
-                                if math.random(math.ceil(lastFrameVehSpeed)) > 150 then
+                            if lastFrameVehSpeed > 200 then
+                                if math.random(math.ceil(lastFrameVehSpeed)) > 200 then
                                     if not harnessOn then
                                         ejectFromVehicle()
                                     else
@@ -153,7 +153,7 @@ RegisterNetEvent('QBCore:Client:EnteredVehicle', function()
                                 end
                             end
                         elseif (seatbeltOn or harnessOn) and not IsThisModelABike(currVehicle) then
-                            if lastFrameVehSpeed > 120 then
+                            if lastFrameVehSpeed > 200 then
                                 if math.random(math.ceil(lastFrameVehSpeed)) > 200 then
                                     if not harnessOn then
                                         ejectFromVehicle()
