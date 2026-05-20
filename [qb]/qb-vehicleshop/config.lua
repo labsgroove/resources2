@@ -70,8 +70,8 @@ Config.Shops = {
             },
             [6] = {
                 coords = vector4(-43.31, -1099.02, 25.44, 52.5),
-                defaultVehicle = 'ram2500',
-                chosenVehicle = 'ram2500'
+                defaultVehicle = 'bolide',
+                chosenVehicle = 'bolide'
             },
             [7] = {
                 coords = vector4(-50.66, -1093.05, 25.44, 222.5),
@@ -80,8 +80,8 @@ Config.Shops = {
             },
             [8] = {
                 coords = vector4(-44.28, -1102.47, 25.44, 298.5),
-                defaultVehicle = 'corvettec5z06',
-                chosenVehicle = 'corvettec5z06'
+                defaultVehicle = 'bolide',
+                chosenVehicle = 'bolide'
             }
         },
     },
