@@ -5,7 +5,7 @@ Config.HandCuffItem = 'handcuffs'
 Config.LicenseRank = 2
 Config.ArmoryWhitelist = {}
 Config.WhitelistedVehicles = {}
-Config.PoliceHelicopter = 'mh6'
+Config.PoliceHelicopter = 'POLMAV'
 Config.FuelResource = 'LegacyFuel' -- supports any that has a GetFuel() and SetFuel() export
 
 Config.AmmoLabels = {
@@ -126,32 +126,15 @@ Config.CarItems = {
 Config.AuthorizedVehicles = {
     -- Grade 0 and higher
     [0] = {
-        ['audia3'] = 'A3',
-        ['audia4'] = 'A4',
-        ['audiq8'] = 'Q8',
-        ['audirs5'] = 'RS5',
-        ['audirs62'] = 'RS62',
-        ['ducati1200'] = 'Ducati 1200',
-        ['sheriff'] = 'Sheriff Car 1',
-        ['sheriff2'] = 'Sheriff Car 2',
-        ['insurgent'] = 'Hummer',
-        ['cerberus2'] = 'Cerberus',
-        ['hiluxcomandos'] = 'Comando',
-        ['savage'] = 'Savage',
-        ['hiluxpe'] = 'Policia do Exercito',
-        ['valkyrie'] = 'Valkyrie',
-        ['apc'] = 'APC',
-        ['khanjali'] = 'Khanjali',
-        ['insurgent3'] = 'Insurgent',
-        ['raiju'] = 'Raiju',
-        ['audia3'] = 'A3',
-        ['audia4'] = 'A4',
-        ['audiq8'] = 'Q8',
-        ['audirs5'] = 'RS5',
-        ['audirs62'] = 'RS62',
-        ['ducati1200'] = 'Ducati 1200',
-        ['sheriff'] = 'Sheriff Car 1',
-        ['sheriff2'] = 'Sheriff Car 2',
+        basebig = 'Van PRF',
+        dusterbig = 'Duster PC',
+        golbig = 'Gol PM',
+        hiluxbig = 'Hilux PM',
+        s10big = 'S 10',
+        spinbig = 'Spin PM',
+        trailbig19 = 'Trail 2019',
+        trailbig21  = 'Trail 2021',
+        xrebig = 'XRE PM',
     },
 }
 
