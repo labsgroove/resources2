@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDataFileMgr__ContentsOfDataFileXml>
+  <disabledFiles />
+  <includedXmlFiles />
+  <includedDataFiles />
+  <dataFiles>
+    <Item>
+      <filename>dlc_villa_island:/%PLATFORM%/levels/gta5/villa_island.rpf</filename>
+      <fileType>RPF_FILE</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="true" />
+    </Item>
+    <Item>
+      <filename>dlc_villa_island:/%PLATFORM%/levels/gta5/villa_island.ityp</filename>
+      <fileType>DLC_ITYP_REQUEST</fileType>
+      <overlay value="false" />
+      <disabled value="true" />
+      <persistent value="false" />
+      <contents>CONTENTS_PROPS</contents>
+    </Item>
+  </dataFiles>
+  <contentChangeSets>
+    <Item>
+      <changeSetName>villa_island_AUTOGEN</changeSetName>
+      <mapChangeSetData />
+      <filesToInvalidate />
+      <filesToDisable />
+      <filesToEnable>
+        <Item>dlc_villa_island:/%PLATFORM%/levels/gta5/villa_island.rpf</Item>
+        <Item>dlc_villa_island:/%PLATFORM%/levels/gta5/villa_island.ityp</Item>
+      </filesToEnable>
+      <txdToLoad />
+      <txdToUnload />
+      <residentResources />
+      <unregisterResources />
+      <requiresLoadingScreen value="false" />
+      <loadingScreenContext />
+      <executionConditions />
+      <useCacheLoader value="false" />
+    </Item>
+  </contentChangeSets>
+  <patchFiles />
+  <allowedFolders />
+</CDataFileMgr__ContentsOfDataFileXml>
