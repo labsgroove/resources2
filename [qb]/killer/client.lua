@@ -4,7 +4,7 @@ local entidadeEspiritual = nil
 local cameraEspiritual = nil
 local alvoAtual = nil
 local distanciaMaxima = 100.0
-local armaEspiritual = GetHashKey("WEAPON_STUNROD")
+local armaEspiritual = GetHashKey("WEAPON_BAT")
 -- Configurações de combate do espírito
 local meleeExtraDamage = 4000            -- dano extra aplicado por acerto corpo-a-corpo (mantido se quiser usar)
 local meleeCooldown = 40             -- ms entre acertos no mesmo alvo (menor = mais rápido)
