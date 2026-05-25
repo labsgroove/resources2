@@ -6,6 +6,12 @@ RegisterNetEvent("boom:getNearbyTargets", function()
     TriggerClientEvent("boom:spawnShooter", src)
 end)
 
+RegisterNetEvent("boom:getNearbyTargetsInVehicle", function()
+    local src = source
+    -- Instrui o cliente a spawnar o atirador como passageiro do veículo
+    TriggerClientEvent("boom:spawnShooterInVehicle", src)
+end)
+
 RegisterNetEvent("boom:getNearbyTargetsLoop", function()
     local src = source
     local player = GetPlayerPed(src)
