@@ -28,7 +28,7 @@ Config.Binoculars = {
 }
 
 Config.AIResponse = {
-    wantedLevels = false, -- if true, you will recieve wanted levels
+    wantedLevels = true, -- if true, you will recieve wanted levels
     dispatchServices = {  -- AI dispatch services
         [1] = true,      -- Police Vehicles
         [2] = true,      -- Police Helicopters
