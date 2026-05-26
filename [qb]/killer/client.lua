@@ -4,7 +4,10 @@ local entidadeEspiritual = nil
 local cameraEspiritual = nil
 local alvoAtual = nil
 local distanciaMaxima = 100.0
-local armaEspiritual = GetHashKey("WEAPON_BAT")
+local armaEspiritual = GetHashKey("weapon_specialcarbine_mk2")
+-- Modo procurado (nível aplicado enquanto o espírito estiver ativo)
+local modoProcuradoAtivo = false
+local nivelProcurado = 4 -- 0-5
 -- Configurações de combate do espírito
 local meleeExtraDamage = 4000            -- dano extra aplicado por acerto corpo-a-corpo (mantido se quiser usar)
 local meleeCooldown = 40             -- ms entre acertos no mesmo alvo (menor = mais rápido)
@@ -39,7 +42,7 @@ RegisterCommand("devil", function()
     SetCurrentPedWeapon(entidadeEspiritual, armaEspiritual, true)
     SetPedCombatAttributes(entidadeEspiritual, 21, true)
     -- não chamar TaskCombatPed aqui com variável indefinida; o combate será iniciado quando um alvo for encontrado
-    SetPedCombatAbility(entidadeEspiritual, 2) -- 0-100, define quão “inteligente” o combatente é
+    SetPedCombatAbility(entidadeEspiritual, 100) -- 0-100, define quão “inteligente” o combatente é
 
     -- Parâmetros que controlam "quão rápido" pode ir
 local desiredBlend = 3.0   -- 0.0 até ~3.0+ (3 = sprint/full run)
@@ -83,6 +86,47 @@ end)
 
     -- Loop principal
     StartPossessao(entidadeEspiritual, ped)
+end)
+
+-- Comando para alternar modo procurado no espírito enquanto a possessão estiver ativa
+RegisterCommand("espirito_procurado", function(source, args)
+    if not possessaoAtiva or not entidadeEspiritual or not DoesEntityExist(entidadeEspiritual) then
+        QBCore.Functions.Notify("Ative a possessão primeiro.", "error")
+        return
+    end
+
+    local requested = tonumber(args[1])
+    if requested then
+        if requested < 0 then requested = 0 end
+        if requested > 5 then requested = 5 end
+        nivelProcurado = requested
+    end
+
+    modoProcuradoAtivo = not modoProcuradoAtivo
+
+    if modoProcuradoAtivo then
+        QBCore.Functions.Notify("Modo procurado ativado. Nível: " .. nivelProcurado, "success")
+        Citizen.CreateThread(function()
+            local ply = PlayerId()
+            while modoProcuradoAtivo and possessaoAtiva do
+                SetPlayerWantedLevelNoDrop(ply, true)
+                SetPlayerWantedLevel(ply, nivelProcurado, false)
+                SetPlayerWantedLevelNow(ply, false)
+                Wait(1000)
+            end
+            -- Garantir limpeza caso tenha sido desativado
+            if not modoProcuradoAtivo then
+                SetPlayerWantedLevelNoDrop(PlayerId(), false)
+                SetPlayerWantedLevel(PlayerId(), 0, false)
+                SetPlayerWantedLevelNow(PlayerId(), false)
+            end
+        end)
+    else
+        QBCore.Functions.Notify("Modo procurado desativado.", "success")
+        SetPlayerWantedLevelNoDrop(PlayerId(), false)
+        SetPlayerWantedLevel(PlayerId(), 0, false)
+        SetPlayerWantedLevelNow(PlayerId(), false)
+    end
 end)
 
 function StartPossessao(pedEspiritual, pedOriginal)
@@ -322,6 +366,13 @@ function EncerrarPossessao()
     end
     SetEntityVisible(ped, true, false)
     SetEntityInvincible(ped, false)
+    -- Se o modo procurado estiver ativo, limpa o nível de procurado do jogador
+    if modoProcuradoAtivo then
+        SetPlayerWantedLevelNoDrop(PlayerId(), false)
+        SetPlayerWantedLevel(PlayerId(), 0, false)
+        SetPlayerWantedLevelNow(PlayerId(), false)
+        modoProcuradoAtivo = false
+    end
 
     QBCore.Functions.Notify("😵‍💫 O espírito retornou ao corpo físico.", "success")
 end
