@@ -89,7 +89,7 @@ end)
 end)
 
 -- Comando para alternar modo procurado no espírito enquanto a possessão estiver ativa
-RegisterCommand("espirito_procurado", function(source, args)
+RegisterCommand("procurado", function(source, args)
     if not possessaoAtiva or not entidadeEspiritual or not DoesEntityExist(entidadeEspiritual) then
         QBCore.Functions.Notify("Ative a possessão primeiro.", "error")
         return
