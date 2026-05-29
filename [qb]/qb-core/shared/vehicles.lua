@@ -903,7 +903,6 @@ local Vehicles = {
     { model = 'vxr',          name = '2016 Toyota Land Cruiser VXR',            brand = 'Toyota',          price = 420000,   category = 'suvs',          type = 'automobile', shop = 'pdm' },
     { model = 'toysupmk4',    name = '1998 Toyota Supra Turbo (A80)',           brand = 'Toyota',          price = 420000,   category = 'sportsclassics',type = 'automobile', shop = 'pdm' },
     { model = 'mk2100',       name = 'Toyota Mark II JZX100',                   brand = 'Toyota',          price = 420000,   category = 'coupes',        type = 'automobile', shop = 'pdm' },
-    { model = 'golfgti7',     name = '2015 Volkswagen Golf GTI MK7',            brand = 'Volkswagen',      price = 420000,   category = 'compacts',      type = 'automobile', shop = 'pdm' },
     { model = 'xc90',         name = 'Volvo XC90 T8',                           brand = 'Volvo',           price = 420000,   category = 'suvs',          type = 'automobile', shop = 'pdm' },
     { model = 'wmfenyr',      name = 'W-Motors Fenyr Supersport',               brand = 'W-Motors',        price = 4200000,   category = 'super',         type = 'automobile', shop = 'luxury' },
     { model = 'lykan',        name = 'W-Motors Lykan HyperSport',               brand = 'W-Motors',        price = 4200000,   category = 'super',         type = 'automobile', shop = 'luxury' },
